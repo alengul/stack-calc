@@ -1,8 +1,7 @@
-package token.parser;
+package algo.token.parser;
 
 import algo.shunting.TokenException;
 import algo.token.*;
-import algo.token.parser.TokenParser;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

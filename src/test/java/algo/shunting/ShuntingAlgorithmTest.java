@@ -1,8 +1,5 @@
-package shunting;
+package algo.shunting;
 
-import algo.shunting.BracketsBalancingException;
-import algo.shunting.ShuntingAlgorithm;
-import algo.shunting.TokenException;
 import algo.token.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -76,7 +73,8 @@ public class ShuntingAlgorithmTest {
                         new TokenNumber(2.0),
                         rightBracket,
                         rightBracket
-                )));
+                ))
+        );
 
         assertThrows(BracketsBalancingException.class, () ->
                 algorithm.toRPN(List.of(
@@ -86,7 +84,18 @@ public class ShuntingAlgorithmTest {
                         addition,
                         new TokenNumber(2.0),
                         rightBracket
-                )));
+                ))
+        );
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenUnknownToken() {
+        assertThrows(TokenException.class, () ->
+                algorithm.toRPN(List.of(
+                        new Token() {
+                        }
+                ))
+        );
     }
 
 }

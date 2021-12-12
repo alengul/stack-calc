@@ -1,5 +1,6 @@
 package algo;
 
+import algo.calculator.OperatorsBalancingException;
 import algo.calculator.StackCalc;
 import algo.token.Token;
 import algo.token.parser.TokenParser;
@@ -13,7 +14,7 @@ import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws TokenException, BracketsBalancingException {
+    public static void main(String[] args) throws TokenException, BracketsBalancingException, OperatorsBalancingException {
         String line = scanner.nextLine();
         List<Token> list = TokenParser.parse(line);
         ShuntingAlgorithm shuntingAlgorithm = new ShuntingAlgorithm();
