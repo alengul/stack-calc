@@ -15,12 +15,10 @@ public class TokenBracket implements Token {
     }
 
     public int precedence() {
-        switch (bracket) {
-            case LEFT_BRACKET:
-                return -1;
-            default:
-                return 0;
+        if (bracket == Bracket.LEFT_BRACKET) {
+            return -1;
         }
+        return 0;
     }
 
     @Override

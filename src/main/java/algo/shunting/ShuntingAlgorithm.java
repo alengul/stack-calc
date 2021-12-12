@@ -19,7 +19,7 @@ public class ShuntingAlgorithm {
     public List<Token> toRPN(List<Token> arr) throws TokenException, BracketsBalancingException {
         for (Token token : arr) {
             if (token instanceof TokenNumber) {
-                result.add(token);
+                onNumber((TokenNumber) token);
             } else if (token instanceof TokenOperator) {
                 onOperator((TokenOperator) token);
             } else if (token instanceof TokenBracket) {
@@ -30,6 +30,10 @@ public class ShuntingAlgorithm {
         }
         onRemainOperators();
         return result;
+    }
+
+    private void onNumber(TokenNumber number) {
+        result.add(number);
     }
 
     private void onOperator(TokenOperator operator) {
