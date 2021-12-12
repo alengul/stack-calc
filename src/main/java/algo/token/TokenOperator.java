@@ -39,4 +39,9 @@ public class TokenOperator implements Token {
     public int hashCode() {
         return Objects.hash(getOperator());
     }
+
+    @Override
+    public String toString() {
+        return operator.toString();
+    }
 }

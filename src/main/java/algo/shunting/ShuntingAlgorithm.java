@@ -25,7 +25,7 @@ public class ShuntingAlgorithm {
             } else if (token instanceof TokenBracket) {
                 onBracket((TokenBracket) token);
             } else {
-                throw new TokenException("kd");
+                throw new TokenException(token);
             }
         }
         onRemainOperators();
@@ -57,7 +57,7 @@ public class ShuntingAlgorithm {
                 throw new BracketsBalancingException();
             }
         } else {
-            throw new TokenException("jj");
+            throw new TokenException(bracket);
         }
     }
 

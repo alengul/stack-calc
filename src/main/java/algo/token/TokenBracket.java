@@ -35,4 +35,9 @@ public class TokenBracket implements Token {
     public int hashCode() {
         return Objects.hash(getBracket());
     }
+
+    @Override
+    public String toString() {
+        return bracket.toString();
+    }
 }

@@ -27,5 +27,8 @@ public class TokenNumber implements Token {
         return Objects.hash(getNumber());
     }
 
-
+    @Override
+    public String toString() {
+        return number.toString();
+    }
 }
